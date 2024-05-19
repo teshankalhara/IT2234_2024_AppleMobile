@@ -12,7 +12,6 @@ import Context from "../context";
 
 const Header = () => {
   const navigate = useNavigate()
-  const context = useContext(Context)
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch()
   const handleLogout = async () => {
