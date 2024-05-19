@@ -11,9 +11,10 @@ import ROLE from "../api/role";
 import Context from "../context";
 
 const Header = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const context = useContext(Context)
   const user = useSelector((state) => state?.user?.user);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.logout_user.url, {
       method: SummaryApi.logout_user.method,
