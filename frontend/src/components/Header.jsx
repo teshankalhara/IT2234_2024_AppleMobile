@@ -14,6 +14,7 @@ const Header = () => {
   const navigate = useNavigate()
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch()
+  
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.logout_user.url, {
       method: SummaryApi.logout_user.method,
