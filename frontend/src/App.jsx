@@ -14,19 +14,18 @@ import { setUserDetails } from "./store/userSlice";
 function App() {
   const dispatch = useDispatch()
 
-  const fetchUserDetails=async()=>{
-    const dataResponse=await fetch(SummaryApi.current_user,{
-      method:SummaryApi.current_user.method,
-      credentials:"include"
+  const fetchUserDetails = async()=>{
+    const dataResponse = await fetch(SummaryApi.current_user.url,{
+      method : SummaryApi.current_user.method,
+      credentials : 'include'
     })
-    const dataApi=await dataResponse.json()
+
+    const dataApi = await dataResponse.json()
 
     if(dataApi.success){
       dispatch(setUserDetails(dataApi.data))
     }
-
-    console.log("data-user:",dataResponse)
-  }
+}
   
   useEffect(()=>{
     fetchUserDetails()
@@ -46,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
