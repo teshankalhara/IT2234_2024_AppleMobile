@@ -73,7 +73,7 @@ const SignUp = () => {
           }else{
             toast.error("Please check password and confirm password") //get msg for user check password
           }
-    };
+    }
     
     console.log("data-log", { data })
     return (
