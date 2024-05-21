@@ -14,7 +14,7 @@ const Header = () => {
   const navigate = useNavigate()
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch()
-  
+  //console.log("user heaeder",user)
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.logout_user.url, {
       method: SummaryApi.logout_user.method,
@@ -55,7 +55,19 @@ const Header = () => {
 
         <div className="flex items-center gap-7">
           <div className="text-3xl cursor-pointer">
-            <FaRegCircleUser />
+            {
+              user?._id && (
+                <div className='text-3xl cursor-pointer relative flex justify-center' onClick={() => setMenuDisplay(preve => !preve)}>
+                  {
+                    user?.profilePic ? (
+                      <img src={user?.profilePic} className='w-10 h-10 rounded-full' alt={user?.name} />
+                    ) : (
+                      <FaRegCircleUser />
+                    )
+                  }
+                </div>
+              )
+            }
           </div>
 
           <div className="text-2xl relative">
