@@ -30,6 +30,7 @@ const SignUp = () => {
         })
     }
 
+    ////can upload very small small size pic
     const handleUploadPic = async (e) => {
         const file = e.target.files[0]
 
@@ -56,14 +57,14 @@ const SignUp = () => {
                     "content-type" : "application/json"
                 },
                 body : JSON.stringify(data)
-              })
+            })
         
-              const dataApi = await dataResponse.json()
+            const dataApi = await dataResponse.json()
     
-              if(dataApi.success){
+            if(dataApi.success){
                 toast.success(dataApi.message) //get msg for user create ok
                 navigate("/login")
-              }
+            }
     
               if(dataApi.error){
                 toast.error(dataApi.message) //get msg for user create not ok
