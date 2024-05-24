@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "./Logo";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser, FaCartShopping } from "react-icons/fa6";
@@ -14,6 +14,7 @@ const Header = () => {
   const navigate = useNavigate()
   const user = useSelector((state) => state?.user?.user);
   const dispatch = useDispatch()
+  const [menuDisplay, setMenuDisplay] = useState(false);
   //console.log("user heaeder",user)
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.logout_user.url, {
@@ -57,7 +58,7 @@ const Header = () => {
           <div className="text-3xl cursor-pointer">
             {
               user?._id && (
-                <div className='text-3xl cursor-pointer relative flex justify-center'>
+                <div className='text-3xl cursor-pointer relative flex justify-center' onClick={() => setMenuDisplay(preve => !preve)}>
                   {
                     user?.profilePic ? (
                       <img src={user?.profilePic} className='w-10 h-10 rounded-full' alt={user?.name} />
@@ -69,6 +70,19 @@ const Header = () => {
               )
             }
           </div>
+            {
+              menuDisplay && (
+                <div className="absolute bg-white bottom-0 top-11 h-fit p-2 shadow-lg rounded">
+                  <nav>
+                    {
+                      user?.role === ROLE.ADMIN && (
+                        <Link to={'/admin-panel/all-products'} className="whitespace-nowrap hidden md:block hover:bg-slate-100 p-2" onClick={() => setMenuDisplay(preve => !preve)}>Admin Panel</Link>
+                      )
+                    }
+                  </nav>
+                </div>
+              )
+            }
 
           <div className="text-2xl relative">
             <span>
