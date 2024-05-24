@@ -25,6 +25,20 @@ const router = createBrowserRouter([
             {
                 path: "sign-up",
                 element: <SignUp/>
+            },
+            {
+                path: "admin-panel",
+                element: <AdminPanel/>,
+                children: [
+                    {
+                        path: "all-users",
+                        element: <AllUsers/>
+                    },
+                    {
+                        path: "all-products",
+                        element: <AllProducts/>
+                    }
+                ]
             }
         ]
     }
