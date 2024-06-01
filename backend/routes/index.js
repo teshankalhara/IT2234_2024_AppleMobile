@@ -23,20 +23,25 @@ const updateAddToCartProduct = require('../controller/updateAddToCartProduct')
 const deleteAddToCartProduct = require('../controller/deleteAddToCartProduct')
 //cart
 
+//users
+//user router
 router.post("/signup",userSignUpController)
 router.post("/signin",userSignInController)
 router.get("/user-details",authToken,userDetailsController)
 router.get("/userLogout",userLogout)
-
-//adminPanel
+//user router
+//adminPanel router
 router.get("/all-user", authToken, allUsers)
 router.post("/update-user", authToken, updateUser)
-//adminPanel
+//adminPanel router
+//users
 
+//product router
 router.post("/upload-product",authToken,addToCartController)
 router.get("/upload-product",authToken,countAddToCartProduct)
 router.get("/view-card-product",authToken,addToCartViewProduct)
 router.post("/update-cart-product",authToken,updateAddToCartProduct)
 router.post("/delete-cart-product",authToken,deleteAddToCartProduct)
+//product router
 
 module.exports=router
