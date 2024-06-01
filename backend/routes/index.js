@@ -36,12 +36,12 @@ router.post("/update-user", authToken, updateUser)
 //adminPanel router
 //users
 
-//product router
+//user add to cart router
 router.post("/upload-product",authToken,addToCartController)
 router.get("/upload-product",authToken,countAddToCartProduct)
 router.get("/view-card-product",authToken,addToCartViewProduct)
 router.post("/update-cart-product",authToken,updateAddToCartProduct)
 router.post("/delete-cart-product",authToken,deleteAddToCartProduct)
-//product router
+//user add to cart router
 
 module.exports=router
