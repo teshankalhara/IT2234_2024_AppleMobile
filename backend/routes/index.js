@@ -7,20 +7,20 @@ const authToken = require('../middleware/authToken')
 //token
 
 //user
-const userSignUpController=require('../controller/userSignUp')
-const userSignInController = require('../controller/userSignIn')
-const userDetailsController = require('../controller/userDetails')
-const userLogout = require('../controller/userLogout')
-const allUsers = require('../controller/allUsers')
-const updateUser = require('../controller/updateUser')
+const userSignUpController = require("../controller/user/userSignUp")
+const userSignInController = require('../controller/user/userSignIn')
+const userDetailsController = require('../controller/user/userDetails')
+const userLogout = require('../controller/user/userLogout')
+const allUsers = require('../controller/user/allUsers')
+const updateUser = require('../controller/user/updateUser')
 //user
 
 //cart
-const addToCartController = require('../controller/addToCartController')
-const countAddToCartProduct = require('../controller/countAddToCartProduct')
-const addToCartViewProduct = require('../controller/addToCartViewProduct')
-const updateAddToCartProduct = require('../controller/updateAddToCartProduct')
-const deleteAddToCartProduct = require('../controller/deleteAddToCartProduct')
+const addToCartController = require('../controller/user/addToCartController')
+const countAddToCartProduct = require('../controller/user/countAddToCartProduct')
+const addToCartViewProduct  = require('../controller/user/addToCartViewProduct')
+const updateAddToCartProduct = require('../controller/user/updateAddToCartProduct')
+const deleteAddToCartProduct = require('../controller/user/deleteAddToCartProduct')
 //cart
 
 //users
