@@ -31,8 +31,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const dataResponse = await fetch(SummaryApi.signIN.url, {
-      method: SummaryApi.signIN.method,
+    const dataResponse = await fetch(SummaryApi.signIn.url, {
+      method: SummaryApi.signIn.method,
       credentials: "include",
       headers: {
         "content-type": "application/json",
